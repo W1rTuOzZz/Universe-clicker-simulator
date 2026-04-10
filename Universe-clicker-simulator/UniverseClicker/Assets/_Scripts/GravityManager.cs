@@ -20,29 +20,36 @@ void UpdateUI()
             else
               {
                 priceDisplay.color = Color.red; // Если нет — красный
-              }
+              } 
     }
 void Start ()
     {
         UpdateUI();
     }
 
+    public void OnPlanetClick() 
+    {
+        gravityCount += clickPower; 
+        isGameStarted = true;       
+        UpdateUI();                 
+        Debug.Log("Клик по кнопке! Теперь гравитация: " + gravityCount);
+    }
+
 void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-        gravityCount += clickPower;
-        isGameStarted = true;
-        Debug.Log("Гравитация: " + gravityCount);
-        } if (isGameStarted)
+
+        if (isGameStarted)
         {
             gravityCount += autoClickSpeed * Time.deltaTime;
             UpdateUI();
-        } if (Input.GetKeyDown(KeyCode.Space) && gravityCount >= upgradeCost)
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && gravityCount >= upgradeCost)
         {
             gravityCount -= upgradeCost;
             clickPower += 2;
             upgradeCost *= 1.5f;
+            UpdateUI(); 
         }
     }
 }
