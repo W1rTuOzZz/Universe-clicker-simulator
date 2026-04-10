@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -594,7 +594,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Project\Universe-clicker-simulator\UniverseClicker
   m_LockTracker:
@@ -613,9 +613,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 50854
+    - m_Data: 51496
     m_LastClickedID:
-      m_Data: 50854
+      m_Data: 51496
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 50758
@@ -687,10 +687,10 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -18402
+    - m_Data: 50448
     m_LastClickedEntityId:
-      m_Data: -18402
-    m_HadKeyboardFocusLastEvent: 0
+      m_Data: 50448
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 3}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_EntityId:
@@ -768,7 +768,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectEntityId:
     m_Data: 0
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 549.60004
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -816,13 +816,12 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: -18402
+      - m_Data: 50448
       m_LastClickedID:
-        m_Data: -18402
+        m_Data: 50448
       m_ExpandedIDs:
       - m_Data: -1342
-      - m_Data: 50396
-      - m_Data: 50422
+      - m_Data: 50414
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1346,9 +1345,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 241.7899, y: 950.4031, z: 0.9987013}
+    m_Target: {x: 1054.5211, y: 520.7194, z: -3.4453804}
     speed: 2
-    m_Value: {x: 241.7899, y: 950.4031, z: 0.9987013}
+    m_Value: {x: 1054.5211, y: 520.7194, z: -3.4453804}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1399,9 +1398,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 219.73006
+    m_Target: 664.1354
     speed: 2
-    m_Value: 219.73006
+    m_Value: 664.1354
   m_Ortho:
     m_Target: 1
     speed: 2
