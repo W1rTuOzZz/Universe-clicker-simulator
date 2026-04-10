@@ -35,6 +35,17 @@ void Start ()
         Debug.Log("Клик по кнопке! Теперь гравитация: " + gravityCount);
     }
 
+public void BuyUpgrade()
+    {
+        if (gravityCount >= upgradeCost)
+        {
+            gravityCount -= upgradeCost;
+            clickPower += 2;
+            upgradeCost *= 1.5f;
+            UpdateUI();
+            Debug.Log("Покупка апгрейда: " + upgradeCost);
+        }
+    }
 void Update()
     {
 
@@ -42,14 +53,6 @@ void Update()
         {
             gravityCount += autoClickSpeed * Time.deltaTime;
             UpdateUI();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && gravityCount >= upgradeCost)
-        {
-            gravityCount -= upgradeCost;
-            clickPower += 2;
-            upgradeCost *= 1.5f;
-            UpdateUI(); 
         }
     }
 }
