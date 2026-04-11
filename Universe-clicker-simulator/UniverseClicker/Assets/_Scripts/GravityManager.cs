@@ -12,7 +12,11 @@ public float clickPower;
 public bool isGameStarted;
 public float upgradeCost = 10f;
 public TMP_Text priceDisplay;
-public float autoClickTimer = 0f;
+public float autoClickTime = 0f;
+public float autoClickTimeUpgrade = 0f;
+public float autoClickCostTimeUpgrade = 5f;
+public float autoClickSpeedUpgrade = 0f;
+public float autoClickCostSpeedUpgrade = 5f;
 void UpdateUI()
     {
         scoreDisplay.text = "Гравитация: " + gravityCount.ToString("F1");
@@ -38,23 +42,42 @@ void Start ()
         UpdateUI();                 
         Debug.Log("Клик по кнопке! Теперь гравитация: " + gravityCount);
     }
-
-public void BuyUpgrade()
+    public void ClickSpeedUpgrade()
+    {
+        if (gravityCount >= autoClickCostSpeedUpgrade)
+        {
+            gravityCount -= autoClickCostSpeedUpgrade;
+            autoClickSpeedUpgrade += 1f;
+            autoClickCostSpeedUpgrade *= 1.5f;
+        }
+         UpdateUI();
+    }
+    public void ClickTimeUpgrade()
+    {
+        if (gravityCount >= autoClickCostTimeUpgrade) 
+        {
+         gravityCount -= autoClickCostTimeUpgrade;
+         autoClickTimeUpgrade += 2f;
+         autoClickCostTimeUpgrade *= 1.5f;
+        }
+        UpdateUI();
+    }
+    public void BuyUpgrade()
     {
         if (gravityCount >= upgradeCost)
         {
             gravityCount -= upgradeCost;
-            upgradeCost *= 1.5f;
-            autoClickTimer += 10f;
-            UpdateUI();
-            Debug.Log("Покупка апгрейда: " + upgradeCost);
+            autoClickTime += (10f + autoClickTimeUpgrade); 
+            autoClickSpeed = (0.5f + autoClickSpeedUpgrade);
+            Debug.Log("Покупка апгрейд: " + upgradeCost);
         }
+        UpdateUI();
     }
 void Update()
     {
-        if (autoClickTimer > 0)
+        if (autoClickTime > 0)
         {
-            autoClickTimer -= Time.deltaTime;
+            autoClickTime -= Time.deltaTime;
             gravityCount += autoClickSpeed * Time.deltaTime;
             UpdateUI();
         }
