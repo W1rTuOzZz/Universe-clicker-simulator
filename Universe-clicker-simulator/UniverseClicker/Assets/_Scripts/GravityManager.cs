@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Threading;
+using System.Collections;
+using Unity.VisualScripting;
 public class GravityManager : MonoBehaviour
 {
 public float gravityCount;
@@ -7,8 +10,9 @@ public TMP_Text scoreDisplay;
 public float autoClickSpeed;
 public float clickPower;
 public bool isGameStarted;
-public float upgradeCost = 10;
+public float upgradeCost = 10f;
 public TMP_Text priceDisplay;
+public float autoClickTimer = 0f;
 void UpdateUI()
     {
         scoreDisplay.text = "Гравитация: " + gravityCount.ToString("F1");
@@ -40,17 +44,17 @@ public void BuyUpgrade()
         if (gravityCount >= upgradeCost)
         {
             gravityCount -= upgradeCost;
-            clickPower += 2;
             upgradeCost *= 1.5f;
+            autoClickTimer += 10f;
             UpdateUI();
             Debug.Log("Покупка апгрейда: " + upgradeCost);
         }
     }
 void Update()
     {
-
-        if (isGameStarted)
+        if (autoClickTimer > 0)
         {
+            autoClickTimer -= Time.deltaTime;
             gravityCount += autoClickSpeed * Time.deltaTime;
             UpdateUI();
         }
