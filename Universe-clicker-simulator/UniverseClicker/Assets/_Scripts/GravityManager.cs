@@ -112,7 +112,7 @@ void Start ()
     }
     public void BuyPassiveIncome()
     {
-        if (gravityCount >= passiveIncomeUpgradeCost)
+        if (gravityCount >= passiveIncomeUpgradeCost && autoClickTime <=0)
         {
             gravityCount -= passiveIncomeUpgradeCost;
             autoClickTime += (10f + autoClickTimeUpgrade); 
