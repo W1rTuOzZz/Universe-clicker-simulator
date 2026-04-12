@@ -1916,6 +1916,7 @@ RectTransform:
   - {fileID: 442377213}
   - {fileID: 326201838}
   - {fileID: 686762299}
+  - {fileID: 1693777655}
   m_Father: {fileID: 453586903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1951,8 +1952,15 @@ MonoBehaviour:
   autoClickCostTimeUpgrade: 5
   autoClickSpeedUpgrade: 0
   autoClickCostSpeedUpgrade: 5
-  gravityLevel: 0
+  gravityLevel: 1
   nextLevelCost: 1000
+  asteroidImage: {fileID: 1693777656}
+  asteroidSprites:
+  - {fileID: 6023769876137771144, guid: 44dc5fbb445020d448cd72c7c1df2c29, type: 3}
+  - {fileID: 3907017417488000277, guid: 0e77a5779f3217d40ab0c9a62b722592, type: 3}
+  - {fileID: -273188895034947643, guid: 55318b69b88fb184ca40adfac34160e7, type: 3}
+  - {fileID: 3011943568036654918, guid: 31a0578aae9f85e41a2ef9e0d660bc83, type: 3}
+  - {fileID: -3355175044612264214, guid: 1ade01b91b57dd445b34591ccad3c3cd, type: 3}
 --- !u!114 &722098708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3860,6 +3868,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672806605}
   m_CullTransparentMesh: 1
+--- !u!1 &1693777654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693777655}
+  - component: {fileID: 1693777657}
+  - component: {fileID: 1693777656}
+  m_Layer: 5
+  m_Name: AsteroidModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1693777655
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693777654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722098706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 350, y: 350}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1693777656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693777654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3355175044612264214, guid: 1ade01b91b57dd445b34591ccad3c3cd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1693777657
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693777654}
+  m_CullTransparentMesh: 1
 --- !u!1 &1703961240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4302,8 @@ MonoBehaviour:
   autoClickCostSpeedUpgrade: 5
   gravityLevel: 0
   nextLevelCost: 1000
+  asteroidImage: {fileID: 0}
+  asteroidSprites: []
 --- !u!4 &2070590776
 Transform:
   m_ObjectHideFlags: 0

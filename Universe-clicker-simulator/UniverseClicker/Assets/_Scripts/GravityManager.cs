@@ -3,6 +3,7 @@ using TMPro;
 using System.Threading;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 public class GravityManager : MonoBehaviour
 {
 public float gravityCount;
@@ -21,8 +22,10 @@ public float autoClickTimeUpgrade = 0f;
 public float autoClickCostTimeUpgrade = 5f;
 public float autoClickSpeedUpgrade = 0f;
 public float autoClickCostSpeedUpgrade = 5f;
-public int gravityLevel = 0;
+public int gravityLevel = 1;
 public int nextLevelCost = 1000;
+public Image asteroidImage;
+public Sprite[] asteroidSprites;
 void UpdateUI()
     {
         scoreDisplay.text = "Уровень гравитация: " + gravityCount.ToString("F1");
@@ -66,8 +69,21 @@ void UpdateUI()
 void Start ()
     {
         UpdateUI();
+        UpdateAsteroidEvolution();
     }
+public void UpdateAsteroidEvolution()
+{
+    // Отнимаем 1, чтобы 1 уровень стал индексом 0, 2 уровень - индексом 1 и т.д.
+    int index = gravityLevel - 1;
 
+    // Защита: чтобы индекс не ушел в минус и не превысил количество картинок в коробке
+    index = Mathf.Clamp(index, 0, asteroidSprites.Length - 1);
+
+    if (asteroidImage != null && asteroidSprites.Length > 0)
+    {
+        asteroidImage.sprite = asteroidSprites[index];
+    }
+}
     public void OnClick() 
     {
         gravityCount += clickPower; 
@@ -84,11 +100,9 @@ void Start ()
             clickPower += 5;
             nextLevelCost += 1000;
             Debug.Log("Уровень повышен до: " + gravityLevel);
-        } if (gravityLevel == 5)
-        {
-            
+         UpdateAsteroidEvolution();
+         UpdateUI();
         }
-        UpdateUI();
     }
     public void ClickSpeedUpgrade()
     {
