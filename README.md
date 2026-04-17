@@ -1,5 +1,4 @@
 # Universe-clicker-simulator
-# Universe-clicker-simulator
 
 Кликер про космос, в котором идёт эволюция астероида в другие, более массивные небесные тела.
 
